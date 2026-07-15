@@ -1,0 +1,31 @@
+# BETA Social — https://betasocial.my
+User-agent: *
+Allow: /
+
+# Keep the client portal out of search results
+Disallow: /portal/
+
+# AI crawlers — allowed so BETA Social can be cited in AI answers.
+# Remove an entry (or add "Disallow: /") to block a specific crawler.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://betasocial.my/sitemap.xml
