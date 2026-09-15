@@ -208,17 +208,6 @@ a.card-block { text-decoration: none; color: inherit; display: block; }
 .map-embed iframe { width: 100%; height: 340px; border: 0; }
 
 /* ---- Portfolio ---- */
-.brand-cloud { display: flex; flex-wrap: wrap; gap: 2rem 3.5rem; justify-content: center; align-items: center; max-width: 900px; margin: 0 auto; }
-.brand-cloud span {
-  font-family: var(--font-display);
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.35);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: color 0.3s ease;
-}
-.brand-cloud span:hover { color: rgba(255, 255, 255, 0.8); }
 
 /* ---- Responsive ---- */
 @media (max-width: 768px) {

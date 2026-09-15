@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css?v=4">
   <link rel="stylesheet" href="/pages.css">
 
   <script type="application/ld+json">
@@ -78,31 +78,125 @@
     <header class="page-hero with-crumbs">
       <div class="inner">
         <p class="eyebrow">Our Work</p>
-        <h1>Brands we've partnered with</h1>
-        <p class="lede">From global names to homegrown favourites, we've delivered marketing and on-ground campaigns for a wide range of brands across Malaysia.</p>
+        <h1>Work that moves brands</h1>
+        <p class="lede">Social content, short-form video, photography, websites and print — a selection of what we've created for global names and homegrown favourites across Malaysia.</p>
         <div class="hero-cta">
           <a href="https://wa.me/60162029206" target="_blank" rel="noopener" class="btn btn-primary">Start Your Project</a>
         </div>
       </div>
     </header>
 
-    <section class="block">
+    <section class="block" id="our-work">
       <div class="wrap">
-        <div class="brand-cloud">
-          <span>ACCA</span>
-          <span>Benzac</span>
-          <span>Bank of China</span>
-          <span>Elsevier</span>
-          <span>Tissot</span>
-          <span>Ippudo</span>
-          <span>Maisen</span>
-          <span>NH Health</span>
+        <div class="work-filters" role="group" aria-label="Filter work by type">
+          <button class="work-filter is-active" data-filter="all">All</button>
+          <button class="work-filter" data-filter="social">Social Posts</button>
+          <button class="work-filter" data-filter="video">Short-form Video</button>
+          <button class="work-filter" data-filter="photo">Photography</button>
+          <button class="work-filter" data-filter="web">Web Design</button>
+          <button class="work-filter" data-filter="print">Collaterals</button>
+        </div>
+        <div class="work-grid">
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-01.webp" alt="Ramen food photography" width="829" height="1244" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-01.webp" alt="Great Eastern Merdeka Day social post" width="675" height="675" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-01.mp4"><img src="/assets/images/work/video-01.webp?v=2" alt="Food review short-form video" width="314" height="558" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="web"><img src="/assets/images/work/web-01.webp" alt="E-commerce website design mockup" width="1400" height="933" loading="lazy"></figure>
+          <figure class="work-item" data-cat="print"><img src="/assets/images/work/print-01.webp" alt="GSPARX exhibition booth backdrop" width="900" height="900" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-02.webp" alt="Plated fine dining food photography" width="934" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-02.webp" alt="Bank of China Dragon Boat Festival post" width="432" height="432" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-02.mp4"><img src="/assets/images/work/video-02.webp?v=2" alt="Benzac skincare short-form video" width="314" height="558" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="web"><img src="/assets/images/work/web-02.webp" alt="Footwear brand website design mockup" width="1400" height="933" loading="lazy"></figure>
+          <figure class="work-item" data-cat="print"><img src="/assets/images/work/print-02.webp" alt="GSPARX roll-up banners" width="675" height="675" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-03.webp" alt="Pizza food photography" width="675" height="844" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-03.webp" alt="Burger Boi Valentine's Day post" width="756" height="945" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-03.mp4"><img src="/assets/images/work/video-03.webp?v=2" alt="On-street interview video" width="334" height="590" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="web"><img src="/assets/images/work/web-03.webp" alt="Lifestyle brand website on tablet" width="1400" height="934" loading="lazy"></figure>
+          <figure class="work-item" data-cat="print"><img src="/assets/images/work/print-03.webp" alt="Restaurant table tent menu" width="1400" height="933" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-04.webp" alt="Ebi tempura food photography" width="730" height="1095" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-04.webp" alt="Chinese New Year festive greeting design" width="720" height="720" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-04.mp4"><img src="/assets/images/work/video-04.webp?v=2" alt="Benzac Skin Deep Conversations podcast clip" width="360" height="636" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="web"><img src="/assets/images/work/web-04.webp" alt="Ideology Design renovation website on tablet and mobile" width="1400" height="933" loading="lazy"></figure>
+          <figure class="work-item" data-cat="print"><img src="/assets/images/work/print-04.webp" alt="Restaurant menu flyer" width="1250" height="834" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-05.webp" alt="Open kitchen restaurant interior photography" width="1400" height="933" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-05.webp" alt="SSP Malaysia Ramadan Kareem post" width="600" height="600" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-05.mp4"><img src="/assets/images/work/video-05.webp?v=2" alt="Maisen restaurant review reel" width="540" height="954" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="web"><img src="/assets/images/work/web-05.webp" alt="Responsive website designs showcase" width="1400" height="805" loading="lazy"></figure>
+          <figure class="work-item" data-cat="print"><img src="/assets/images/work/print-05.webp" alt="HAMI packaging box design" width="790" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-06.webp" alt="Whisky highball beverage photography" width="934" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-06.webp" alt="ACCA recruitment social ad" width="900" height="900" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-06.mp4"><img src="/assets/images/work/video-06.webp?v=2" alt="Maisen cheese katsu food reel" width="540" height="954" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="print"><img src="/assets/images/work/print-06.webp" alt="HAMI embossed logo branding" width="1400" height="989" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-07.webp" alt="Yee sang food photography" width="934" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-07.webp" alt="ACCA educational carousel post" width="900" height="900" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-07.mp4"><img src="/assets/images/work/video-07.webp?v=2" alt="Maisen kitchen behind-the-scenes reel" width="540" height="954" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="print"><img src="/assets/images/work/print-07.webp" alt="GSPARX solar brochure" width="675" height="675" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-08.webp" alt="Ramen bowl lifestyle photography" width="934" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-08.webp" alt="ACCA accounting career post" width="900" height="900" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-08.mp4"><img src="/assets/images/work/video-08.webp?v=2" alt="Ippudo salmon kakiage set reel" width="360" height="636" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="print"><img src="/assets/images/work/print-08.webp" alt="HAMI business card design" width="1073" height="715" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-09.webp" alt="Beer toast lifestyle photography" width="934" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-09.webp" alt="Goodbond wall cladding product post" width="576" height="720" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-09.mp4"><img src="/assets/images/work/video-09.webp?v=2" alt="Maisen dining experience reel" width="360" height="636" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-10.webp" alt="Gyoza food photography" width="934" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-10.webp" alt="Benzac Power Patch comparison infographic" width="756" height="945" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-10.mp4"><img src="/assets/images/work/video-10.webp?v=2" alt="Ippudo guest experience reel" width="360" height="636" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-11.webp" alt="Bee Cheng Hiang mooncake close-up" width="900" height="1125" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-11.webp" alt="Ippudo value set promotional post" width="406" height="720" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-11.mp4"><img src="/assets/images/work/video-11.webp?v=2" alt="My Pizza Lab restaurant reel" width="360" height="636" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-12.webp" alt="Bee Cheng Hiang mooncake gift box photography" width="1120" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-12.webp" alt="Maisen tonkatsu opening post" width="406" height="720" loading="lazy"></figure>
+          <figure class="work-item is-video" data-cat="video" data-video="/assets/videos/work/video-12.mp4"><img src="/assets/images/work/video-12.webp?v=2" alt="Mazda CX-30 test drive reel" width="360" height="636" loading="lazy"><span class="work-badge">Reel</span><span class="work-play" aria-hidden="true"></span></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-13.webp" alt="Bee Cheng Hiang mooncake product photography" width="1120" height="1400" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-13.webp" alt="Social media contest campaign post" width="406" height="720" loading="lazy"></figure>
+          <figure class="work-item" data-cat="photo"><img src="/assets/images/work/photo-14.webp" alt="Bee Cheng Hiang mooncake set photography" width="675" height="675" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-14.webp" alt="Maisen Buy 1 Free 2 promotion" width="500" height="500" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-15.webp" alt="Ippudo Suntory Drinks Fest promotion" width="778" height="972" loading="lazy"></figure>
+          <figure class="work-item" data-cat="social"><img src="/assets/images/work/social-16.webp" alt="My Pizza Lab Family Feast Bundle promotion" width="540" height="540" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <div class="work-lightbox" id="work-lightbox" hidden>
+      <button class="work-lightbox-close" aria-label="Close">&times;</button>
+      <img alt="">
+      <video controls muted loop playsinline preload="none" hidden></video>
+    </div>
+
+    <section class="block tint">
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">Our Clients</p>
+        <h2 style="text-align:center;margin-bottom:2rem;">Brands we've partnered with</h2>
+        <div class="logo-grid">
+          <div class="logo-tile"><img src="/assets/images/clients/gsparx.png?v=2" alt="GSPARX logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/tnb.png?v=2" alt="Tenaga Nasional Berhad logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/acca.png?v=2" alt="ACCA logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/ssp.png?v=2" alt="SSP Malaysia logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/bank-of-china.png?v=2" alt="Bank of China logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/tissot.png?v=2" alt="Tissot logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/maisen.png?v=2" alt="Maisen logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/ippudo.png?v=2" alt="Ippudo logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/dmi.png?v=2" alt="DMI Building Products logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/asus.png?v=2" alt="ASUS logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/ibis.png?v=2" alt="ibis Hotels logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/elsevier.png?v=2" alt="Elsevier logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/bee-cheng-hiang.png?v=2" alt="Bee Cheng Hiang logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/benzac.png?v=2" alt="Benzac logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/cetaphil.png?v=2" alt="Cetaphil logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/dama.png?v=2" alt="DAMA logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/just-coconut.png?v=2" alt="Just Coconut logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/kitschen.png?v=2" alt="Kitschen logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/chin.png?v=2" alt="Chin Motors logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/setia-city.png?v=2" alt="Setia City Residences logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/ipmuda.png?v=2" alt="IPMUDA Berhad logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/memorie.png?v=2" alt="Mémorie logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/avatrade.png?v=2" alt="AvaTrade logo" loading="lazy"></div>
+          <div class="logo-tile"><img src="/assets/images/clients/tria.png?v=2" alt="Tria Seputeh logo" loading="lazy"></div>
         </div>
         <p style="text-align:center;color:var(--text-secondary);margin-top:2.5rem;font-size:0.95rem;">…and many more.</p>
       </div>
     </section>
 
-    <section class="block tint">
+    <section class="block">
       <div class="wrap">
         <p class="eyebrow">What we've delivered</p>
         <h2>Campaigns across every channel</h2>
@@ -163,6 +257,39 @@
           a.addEventListener('click', function () { h.classList.remove('active'); m.classList.remove('active'); });
         });
       }
+    })();
+  </script>
+  <script>
+    (function () {
+      var filters = document.querySelectorAll('.work-filter'), items = document.querySelectorAll('.work-item');
+      filters.forEach(function (b) {
+        b.addEventListener('click', function () {
+          filters.forEach(function (x) { x.classList.toggle('is-active', x === b); });
+          var f = b.dataset.filter;
+          items.forEach(function (it) { it.hidden = f !== 'all' && it.dataset.cat !== f; });
+        });
+      });
+      var lb = document.getElementById('work-lightbox'), lbImg = lb.querySelector('img'), lbVid = lb.querySelector('video');
+      items.forEach(function (it) {
+        it.addEventListener('click', function () {
+          var img = it.querySelector('img'), src = it.dataset.video;
+          if (src) {
+            lbImg.hidden = true; lbVid.hidden = false;
+            lbVid.poster = img.src; lbVid.src = src; lbVid.play();
+          } else {
+            lbVid.hidden = true; lbImg.hidden = false;
+            lbImg.src = img.src; lbImg.alt = img.alt;
+          }
+          lb.hidden = false;
+        });
+      });
+      function close() {
+        lb.hidden = true;
+        lbImg.removeAttribute('src');
+        lbVid.pause(); lbVid.removeAttribute('src'); lbVid.load();
+      }
+      lb.addEventListener('click', function (e) { if (e.target !== lbVid) close(); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !lb.hidden) close(); });
     })();
   </script>
 </body>
