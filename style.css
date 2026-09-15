@@ -250,39 +250,78 @@ section:not(.hero) {
   margin-bottom: 2rem;
 }
 
-.logo-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 0.75rem;
-  max-width: 780px;
+/* Floating client logo wall: 3 rows drifting in alternate directions */
+.logo-marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  overflow: hidden;
+  padding: 0.75rem 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+}
+
+.logo-row { overflow: visible; }
+
+.logo-track {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+  animation: logo-drift 70s linear infinite;
+}
+
+.logo-row--reverse .logo-track {
+  animation-direction: reverse;
+  animation-duration: 80s;
+}
+
+.logo-row:hover .logo-track { animation-play-state: paused; }
+
+@keyframes logo-drift {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 0.5rem)); }
 }
 
 .logo-tile {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 76px;
   background: #fff;
-  border-radius: 10px;
-  height: 64px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 0.8rem;
-  opacity: 0.9;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 0.7rem 1rem;
+  box-shadow: 0 10px 25px -12px rgba(0, 0, 0, 0.5);
+  animation: logo-float 4s ease-in-out infinite;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Stagger the bob so neighbouring logos float out of sync */
+.logo-tile:nth-child(3n+1) { animation-delay: -1.3s; }
+.logo-tile:nth-child(3n+2) { animation-delay: -2.6s; animation-duration: 4.6s; }
+.logo-tile:nth-child(4n)   { animation-duration: 5.2s; }
+
+@keyframes logo-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -7px; }
+}
+
+.logo-tile:hover {
+  animation-play-state: paused;
+  box-shadow: 0 16px 30px -10px rgba(245, 163, 2, 0.45);
 }
 
 .logo-tile img {
   max-width: 100%;
-  max-height: 36px;
+  max-height: 44px;
   width: auto;
   height: auto;
   object-fit: contain;
   user-select: none;
-}
-
-.logo-tile:hover {
-  opacity: 1;
-  transform: translateY(-3px);
+  -webkit-user-drag: none;
 }
 
 .logo-more {
@@ -292,14 +331,20 @@ section:not(.hero) {
   color: rgba(255, 255, 255, 0.5);
 }
 
-@media (max-width: 900px) {
-  .logo-grid { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 560px) {
+  .logo-marquee { gap: 0.7rem; }
+  .logo-track { gap: 0.7rem; }
+  @keyframes logo-drift { to { transform: translateX(calc(-50% - 0.35rem)); } }
+  .logo-tile { width: 118px; height: 62px; padding: 0.5rem 0.7rem; border-radius: 10px; }
+  .logo-tile img { max-height: 36px; }
 }
 
-@media (max-width: 560px) {
-  .logo-grid { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; padding: 0 1rem; }
-  .logo-tile { height: 52px; padding: 0.4rem 0.5rem; border-radius: 8px; }
-  .logo-tile img { max-height: 28px; }
+/* No motion: show one static, wrapped set of logos */
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee { -webkit-mask-image: none; mask-image: none; }
+  .logo-track { animation: none; width: auto; flex-wrap: wrap; justify-content: center; }
+  .logo-tile { animation: none; }
+  .logo-tile[aria-hidden="true"] { display: none; }
 }
 
 /* Our Work gallery (portfolio page) */
