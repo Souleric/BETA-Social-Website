@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://i.ytimg.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=22">
+  <link rel="stylesheet" href="/style.css?v=23">
   <link rel="stylesheet" href="/pages.css">
 
   <script type="application/ld+json">
@@ -415,8 +415,10 @@
         holdStill();
       }, { passive: true });
 
+      var pressed = null;
       lane.addEventListener('pointerdown', function (ev) {
         if (ev.pointerType === 'touch') return;
+        pressed = ev.target.closest('.short-card');
         dragging = true; startX = ev.clientX; startScroll = lane.scrollLeft;
         lane.classList.add('is-dragging', 'is-paused');
         clearTimeout(idleTimer);
@@ -435,12 +437,14 @@
         dragging = false;
         lane.classList.remove('is-dragging');
         holdStill();
-        if (Math.abs(ev.clientX - startX) > 6) lane.dataset.dragged = '1';
+        var moved = Math.abs(ev.clientX - startX) > 6;
+        if (moved) lane.dataset.dragged = '1';
         setTimeout(function () { delete lane.dataset.dragged; }, 50);
+        if (!moved && pressed) openShort(pressed);
+        pressed = null;
       });
 
-      track.addEventListener('click', function (ev) {
-        var card = ev.target.closest('.short-card');
+      function openShort(card) {
         if (!card || card.tagName !== 'BUTTON' || lane.dataset.dragged) return;
         var f = document.createElement('iframe');
         f.src = 'https://www.youtube-nocookie.com/embed/' + card.dataset.yt + '?autoplay=1&rel=0';
@@ -454,7 +458,8 @@
         card.replaceWith(holder);
         clearTimeout(idleTimer);
         lane.classList.add('is-paused');
-      });
+      }
+      track.addEventListener('click', function (ev) { openShort(ev.target.closest('.short-card')); });
     })();
   </script>
 </body>

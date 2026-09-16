@@ -751,7 +751,6 @@ section:not(.hero) {
 
 .reels-marquee::-webkit-scrollbar { display: none; }
 .reels-marquee.is-dragging { cursor: grabbing; }
-.reels-marquee.is-dragging .reel-card { pointer-events: none; }
 
 .reels-track {
   display: flex;

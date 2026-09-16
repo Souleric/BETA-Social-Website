@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@400;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=22">
+  <link rel="stylesheet" href="style.css?v=23">
 
   <!-- Structured data: Organization / LocalBusiness -->
   <script type="application/ld+json">
@@ -957,8 +957,10 @@
       }, { passive: true });
 
       // Drag to scroll with a mouse; touch and trackpad scroll natively
+      var pressed = null;
       lane.addEventListener('pointerdown', function (ev) {
         if (ev.pointerType === 'touch') return;
+        pressed = ev.target.closest('.reel-card');
         dragging = true; startX = ev.clientX; startScroll = lane.scrollLeft;
         lane.classList.add('is-dragging', 'is-paused');
         clearTimeout(idleTimer);
@@ -977,8 +979,13 @@
         dragging = false;
         lane.classList.remove('is-dragging');
         holdStill();
-        if (Math.abs(ev.clientX - startX) > 6) lane.dataset.dragged = '1';
+        var moved = Math.abs(ev.clientX - startX) > 6;
+        if (moved) lane.dataset.dragged = '1';
         setTimeout(function () { delete lane.dataset.dragged; }, 50);
+        // A real press/release is the reliable signal; the click event's target
+        // can resolve to the row rather than the card.
+        if (!moved && pressed) openPlayer(pressed);
+        pressed = null;
       });
 
 
@@ -994,8 +1001,7 @@
         });
       }
 
-      track.addEventListener('click', function (ev) {
-        var card = ev.target.closest('.reel-card');
+      function openPlayer(card) {
         if (!card || card.tagName !== 'BUTTON' || lane.dataset.dragged) return;
         var v = document.createElement('video');
         v.src = card.dataset.video;
@@ -1012,7 +1018,9 @@
         clearTimeout(idleTimer);
         lane.classList.add('is-paused');
         v.addEventListener('pause', function () { lane.classList.remove('is-paused'); });
-      });
+      }
+      // Keyboard (Enter/Space on the button) and touch taps still use click
+      track.addEventListener('click', function (ev) { openPlayer(ev.target.closest('.reel-card')); });
     })();
   </script>
   <script>
