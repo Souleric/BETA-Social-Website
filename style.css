@@ -770,6 +770,12 @@ section:not(.hero) {
 /* Paused while the viewer scrolls, drags, or watches a video */
 .reels-marquee.is-paused .reels-track { animation-play-state: paused; }
 
+/* Paused while the cursor is over the row (pointer devices only, so it
+   doesn't stick after a tap on touchscreens) */
+@media (hover: hover) {
+  .reels-marquee:hover .reels-track { animation-play-state: paused; }
+}
+
 /* Expanded: every reel laid out as a grid, like the work gallery */
 .reels-section.is-expanded .reels-marquee {
   overflow: visible;
