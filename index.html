@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@400;600;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=21">
 
   <!-- Structured data: Organization / LocalBusiness -->
   <script type="application/ld+json">
@@ -120,6 +120,7 @@
       <div class="nav-links">
         <a href="/services/">Services</a>
         <a href="/portfolio/">Work</a>
+        <a href="/podcast/">Podcast</a>
         <a href="/about/">About</a>
         <a href="/contact/">Contact</a>
       </div>
@@ -426,10 +427,70 @@
           <span class="reel-play" aria-hidden="true"></span>
           <span class="reel-client">Mazda</span>
         </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-01.mp4">
+          <img src="assets/images/work/video-01.webp?v=2" alt="" width="314" height="558" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Food review</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-02.mp4">
+          <img src="assets/images/work/video-02.webp?v=2" alt="" width="314" height="558" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Benzac</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-03.mp4">
+          <img src="assets/images/work/video-03.webp?v=2" alt="" width="334" height="590" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Street interview</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-04.mp4">
+          <img src="assets/images/work/video-04.webp?v=2" alt="" width="360" height="636" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Benzac</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-05.mp4">
+          <img src="assets/images/work/video-05.webp?v=2" alt="" width="540" height="954" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Maisen</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-06.mp4">
+          <img src="assets/images/work/video-06.webp?v=2" alt="" width="540" height="954" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Maisen</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-07.mp4">
+          <img src="assets/images/work/video-07.webp?v=2" alt="" width="540" height="954" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Maisen</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-08.mp4">
+          <img src="assets/images/work/video-08.webp?v=2" alt="" width="360" height="636" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Ippudo</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-09.mp4">
+          <img src="assets/images/work/video-09.webp?v=2" alt="" width="360" height="636" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Maisen</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-10.mp4">
+          <img src="assets/images/work/video-10.webp?v=2" alt="" width="360" height="636" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Ippudo</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-11.mp4">
+          <img src="assets/images/work/video-11.webp?v=2" alt="" width="360" height="636" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">My Pizza Lab</span>
+        </button>
+        <button type="button" class="reel-card" aria-hidden="true" data-video="assets/videos/work/video-12.mp4">
+          <img src="assets/images/work/video-12.webp?v=2" alt="" width="360" height="636" loading="lazy">
+          <span class="reel-play" aria-hidden="true"></span>
+          <span class="reel-client">Mazda</span>
+        </button>
       </div>
     </div>
     <p class="reels-hint">Drag or swipe to explore &middot; tap to play</p>
-    <div class="work-teaser-cta"><a href="/portfolio/#short-videos" class="btn btn-secondary">View More Videos &rarr;</a></div>
+    <div class="work-teaser-cta"><button type="button" class="btn btn-secondary reels-toggle" aria-expanded="false" aria-controls="short-videos">View All Videos &darr;</button></div>
   </section>
 
   <!-- Selected Work -->
@@ -766,6 +827,7 @@
       <div class="footer-links">
         <a href="/services/">Services</a>
         <a href="/portfolio/">Work</a>
+        <a href="/podcast/">Podcast</a>
         <a href="/about/">About</a>
         <a href="/faq/">FAQ</a>
         <a href="/contact/">Contact</a>
@@ -862,70 +924,94 @@
     (function () {
       var lane = document.querySelector('.reels-marquee'), track = document.querySelector('.reels-track');
       if (!lane || !track) return;
-      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var paused = false, dragging = false, startX = 0, startScroll = 0, raf;
-      var pos = lane.scrollLeft, lastSet = lane.scrollLeft, last = 0, idleUntil = 0;
-      var SPEED = 27; // pixels per second
+      var dragging = false, startX = 0, startScroll = 0, idleTimer, shift = 0;
 
-      function half() { return track.scrollWidth / 2 || 1; }
-      function setScroll(v) { lane.scrollLeft = v; lastSet = lane.scrollLeft; }
-      function tick(now) {
-        var dt = last ? Math.min((now - last) / 1000, 0.05) : 0;
-        last = now;
-        // Stand aside while the viewer is scrolling, so the two don't fight
-        if (!paused && !dragging && now > idleUntil) {
-          var h = half();
-          pos += SPEED * dt;
-          if (pos >= h) pos -= h;
-          setScroll(pos);
-        }
-        raf = requestAnimationFrame(tick);
+      // One set of cards repeats three times; measure exactly how far one set runs
+      function measure() {
+        var cards = track.children;
+        var perSet = cards.length / 3;
+        if (!perSet || !cards[perSet]) return;
+        shift = cards[perSet].offsetLeft - cards[0].offsetLeft;
+        track.style.setProperty('--shift', shift + 'px');
       }
-      if (!reduce) raf = requestAnimationFrame(tick);
+      measure();
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(measure, 200);
+      });
 
-      lane.addEventListener('focusin', function () { paused = true; });
-      lane.addEventListener('focusout', function () { paused = false; });
-      // Keep our float position in step with manual scrolling, and loop both ways
+      function half() { return shift || track.scrollWidth / 3 || 1; }
+      function holdStill() {
+        lane.classList.add('is-paused');
+        clearTimeout(idleTimer);
+        idleTimer = setTimeout(function () { lane.classList.remove('is-paused'); }, 1200);
+      }
+
+      // Loop the manual scroll, and pause the drift briefly while scrolling
       lane.addEventListener('scroll', function () {
-        // Anything we didn't set ourselves came from the viewer
-        if (Math.abs(lane.scrollLeft - lastSet) > 2) idleUntil = performance.now() + 1200;
         var h = half();
-        if (lane.scrollLeft >= h) setScroll(lane.scrollLeft - h);
-        else if (lane.scrollLeft <= 0) setScroll(lane.scrollLeft + h);
-        pos = lane.scrollLeft;
-        lastSet = lane.scrollLeft;
+        if (lane.scrollLeft >= h) lane.scrollLeft -= h;
+        else if (lane.scrollLeft <= 0) lane.scrollLeft += h;
+        holdStill();
       }, { passive: true });
 
       // Drag to scroll with a mouse; touch and trackpad scroll natively
       lane.addEventListener('pointerdown', function (ev) {
         if (ev.pointerType === 'touch') return;
         dragging = true; startX = ev.clientX; startScroll = lane.scrollLeft;
-        lane.classList.add('is-dragging');
+        lane.classList.add('is-dragging', 'is-paused');
+        clearTimeout(idleTimer);
       });
       window.addEventListener('pointermove', function (ev) {
         if (!dragging) return;
         lane.scrollLeft = startScroll - (ev.clientX - startX);
       });
+      window.addEventListener('pointercancel', function () {
+        dragging = false;
+        lane.classList.remove('is-dragging');
+        holdStill();
+      });
       window.addEventListener('pointerup', function (ev) {
         if (!dragging) return;
-        dragging = false; lane.classList.remove('is-dragging');
+        dragging = false;
+        lane.classList.remove('is-dragging');
+        holdStill();
         if (Math.abs(ev.clientX - startX) > 6) lane.dataset.dragged = '1';
         setTimeout(function () { delete lane.dataset.dragged; }, 50);
       });
 
+
+      // "View All Videos" expands the row into a grid of every reel
+      var section = lane.closest('.reels-section');
+      var toggle = section && section.querySelector('.reels-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var open = section.classList.toggle('is-expanded');
+          toggle.innerHTML = open ? 'Show Less \u2191' : 'View All Videos \u2193';
+          toggle.setAttribute('aria-expanded', String(open));
+          if (!open) { lane.scrollLeft = 0; measure(); }
+        });
+      }
+
       track.addEventListener('click', function (ev) {
         var card = ev.target.closest('.reel-card');
-        if (!card || card.querySelector('video') || lane.dataset.dragged) return;
+        if (!card || card.tagName !== 'BUTTON' || lane.dataset.dragged) return;
         var v = document.createElement('video');
         v.src = card.dataset.video;
         v.controls = true; v.autoplay = true; v.muted = true; v.loop = true; v.playsInline = true;
         v.poster = card.querySelector('img').src;
-        card.querySelector('img').hidden = true;
-        card.classList.add('is-playing');
-        card.appendChild(v);
-        v.play();
-        paused = true;
-        v.addEventListener('pause', function () { paused = false; });
+        // Replace the button entirely: a <video> inside a <button> is invalid and
+        // the button would swallow clicks on the player controls.
+        var holder = document.createElement('div');
+        holder.className = 'reel-card is-playing';
+        holder.dataset.video = card.dataset.video;
+        holder.appendChild(v);
+        card.replaceWith(holder);
+        v.play().catch(function () {});
+        clearTimeout(idleTimer);
+        lane.classList.add('is-paused');
+        v.addEventListener('pause', function () { lane.classList.remove('is-paused'); });
       });
     })();
   </script>

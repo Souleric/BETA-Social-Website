@@ -634,6 +634,101 @@ section:not(.hero) {
   .funnel-icon { animation: none; }
 }
 
+/* Podcast episodes */
+.ep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.ep-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.ep-card:hover { transform: translateY(-4px); border-color: rgba(245, 163, 2, 0.45); }
+
+.ep-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 0;
+  background: #11161f;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.ep-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ep-thumb iframe { width: 100%; height: 100%; border: 0; display: block; }
+.ep-thumb.is-playing { cursor: default; aspect-ratio: 16 / 9; }
+
+.ep-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 66px;
+  height: 66px;
+  margin: -33px 0 0 -33px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ep-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.ep-thumb:hover .ep-play { transform: scale(1.1); background: rgba(245, 163, 2, 0.85); }
+
+.ep-length {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.ep-body { padding: 1.25rem 1.4rem 1.4rem; }
+
+.ep-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 0.6rem;
+}
+
+.ep-link { font-size: 0.9rem; color: #ffc043; text-decoration: none; }
+.ep-link:hover { text-decoration: underline; }
+
+.short-card iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+@media (max-width: 760px) {
+  .ep-grid { grid-template-columns: 1fr; }
+}
+
 /* Short-form video reels: sliding row */
 .reels-section {
   padding: 6rem 0 !important;
@@ -662,7 +757,43 @@ section:not(.hero) {
   display: flex;
   gap: 1.25rem;
   width: max-content;
+  /* Compositor-driven drift: smooth at any speed, unlike per-frame scrolling */
+  animation: reels-slide 107s linear infinite;
+  will-change: transform;
 }
+
+@keyframes reels-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(var(--shift, 33.3333%) * -1)); }
+}
+
+/* Paused while the viewer scrolls, drags, or watches a video */
+.reels-marquee.is-paused .reels-track { animation-play-state: paused; }
+
+/* Expanded: every reel laid out as a grid, like the work gallery */
+.reels-section.is-expanded .reels-marquee {
+  overflow: visible;
+  cursor: default;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.reels-section.is-expanded .reels-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.25rem;
+  width: auto;
+  animation: none;
+  transform: none !important;
+}
+
+/* Only the original set — the repeats exist just for the sliding loop */
+.reels-section.is-expanded .reel-card[aria-hidden="true"] { display: none; }
+.reels-section.is-expanded .reel-card { width: auto; }
+.reels-section.is-expanded .reels-hint { display: none; }
 
 .reels-hint {
   text-align: center;
@@ -749,11 +880,12 @@ section:not(.hero) {
 
 @media (max-width: 560px) {
   .reels-section { padding: 4rem 0 !important; }
-  .reels-track { gap: 0.75rem; }
+  .reels-track { gap: 0.75rem; animation-duration: 76s; }
   .reel-card { width: 160px; border-radius: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reels-track { animation: none; }
   .reel-card { transition: none; }
 }
 
